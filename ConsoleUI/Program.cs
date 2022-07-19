@@ -18,7 +18,24 @@ namespace ConsoleUI
             //ColorManager();
             //BrandManager();
             //GetCarDetailDto();
+            //RentalTest();
+        }
 
+        private static void RentalTest()
+        {
+            Rental rental = new Rental();
+            rental.CarId = 1;
+            rental.CustomerId = 1;
+            rental.RentDate = new DateTime(2022, 07, 19);
+            rental.ReturnDate = new DateTime(2022, 07, 20);
+
+
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            //rentalManager.Add(rental);
+            foreach (var item in rentalManager.GetAll().Data)
+            {
+                Console.WriteLine(item.CarId);
+            }
             Console.ReadLine();
         }
 
