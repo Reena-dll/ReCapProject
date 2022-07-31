@@ -6,9 +6,9 @@ using System.Text;
 
 namespace Business.ValidationRules.FluentValidation
 {
-    public class UserValidation : AbstractValidator<User>
+    public class UserValidator : AbstractValidator<User>
     {
-        public UserValidation()
+        public UserValidator()
         {
             RuleFor(u => u.FirstName).NotEmpty();
             RuleFor(u => u.FirstName).MaximumLength(50);
