@@ -35,5 +35,8 @@ namespace Business.Constants
         public static string RentalList = "Kiralamalar Listelendi";
 
         public static string CarNotDelivered = "Kiralama Oluşturulamadı";
+        public static string CarCountOfBrandError = "Bir kategoride yalnızca 10 ürün olabilir.";
+        public static string CarNameExists = "Bu isimde zaten başka bir araba mevcut.";
+        public static string CheckIfBrandLimitExceded = "Marka limiti aşıldığı için yeni araba eklenemiyor.";
     }
 }

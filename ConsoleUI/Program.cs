@@ -74,7 +74,7 @@ namespace ConsoleUI
 
         private static void GetCarDetailDto()
         {
-            CarManager carManager2 = new CarManager(new EfCarDal());
+            CarManager carManager2 = new CarManager(new EfCarDal(),new BrandManager(new EfBrandDal()));
 
             foreach (var item in carManager2.GetCarDetailDto().Data)
             {
@@ -86,7 +86,7 @@ namespace ConsoleUI
         {
             //Car car1 = new Car() { ColorId = 2, BrandId = 2, DailyPrice = 10, Description = "asdasdsa", ModelYear = "2000", Name = "a", };
             //carManager.Add(car1);
-            CarManager carManager3 = new CarManager(new EfCarDal());
+            CarManager carManager3 = new CarManager(new EfCarDal(), new BrandManager(new EfBrandDal()));
             //carManager3.Add(new Car { Name = "GT-R R35", BrandId = 1, ColorId = 1, ModelYear = "2020", DailyPrice = 300, Description = "Mükemmel Bir Araba" });
             //carManager3.Update(new Car { CarId = 1002, Name = "GT-R R35", BrandId = 1, ColorId = 1, ModelYear = "2019", DailyPrice = 400, Description = "Dehşet Bir Araba" });
             //carManager3.Delete(new Car { CarId = 1002 });
