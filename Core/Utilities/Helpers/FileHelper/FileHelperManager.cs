@@ -44,7 +44,7 @@ namespace Core.Utilities.Helpers.FileHelper
                     file.CopyTo(fileStream);
                     fileStream.Flush();
                     return imageName;
-
+                    
                 }
             }
             return null;
