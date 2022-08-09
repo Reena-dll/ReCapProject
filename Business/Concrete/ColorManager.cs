@@ -23,6 +23,7 @@ namespace Business.Concrete
         [ValidationAspect(typeof(ColorValidator))]
         public IResult Add(Color color)
         {
+            color.Status = true;
             _colorDal.Add(color);
             return new SuccessResult(Messages.AddedColor); 
         }
