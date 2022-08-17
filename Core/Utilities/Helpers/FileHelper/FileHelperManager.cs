@@ -36,7 +36,7 @@ namespace Core.Utilities.Helpers.FileHelper
                 {
                     Directory.CreateDirectory(root);
                 }
-                string imageExtension = Path.GetExtension(file.FileName);
+                string imageExtension = Path.GetExtension(file.FileName); 
                 string imageName = Guid.NewGuid().ToString() + imageExtension;
 
                 using (FileStream fileStream = File.Create(root + imageName))
