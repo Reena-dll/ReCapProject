@@ -9,6 +9,7 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Entities.DTOs;
 
 namespace Business.Concrete
 {
@@ -52,6 +53,11 @@ namespace Business.Concrete
         public IDataResult<List<OperationClaim>> GetClaims(User user)
         {
             return new SuccessDataResult<List<OperationClaim>>(_userDal.GetClaims(user));
+        }
+
+        public IDataResult<List<UserDetailDto>> GetUserDetail()
+        {
+            return new SuccessDataResult<List<UserDetailDto>>(_userDal.GetUserDetailDto());
         }
 
         public IResult Update(User user)
