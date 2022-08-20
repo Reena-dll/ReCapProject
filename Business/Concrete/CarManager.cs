@@ -76,7 +76,7 @@ namespace Business.Concrete
         [CacheAspect]
         public IDataResult<List<CarDetailDto>> GetCarDetailDto()
         {
-            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetailDto());
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails());
         }
 
         [CacheAspect]
@@ -106,7 +106,16 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CarUpdated);
             
         }
+        public IDataResult<List<CarDetailDto>> GetCarsByBrandIdDto(int brandId)
+        {
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(x=> x.BrandId == brandId));
 
+        }
+        public IDataResult<List<CarDetailDto>> GetCarsByColorIdDto(int colorId)
+        {
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(x=> x.ColorId==colorId));
+
+        }
         private IResult CheckIfCarCountOfBrandCorrect(int brandId)
         {
             var result = _carDal.GetAll(c => c.BrandId == brandId).Count();
@@ -137,5 +146,7 @@ namespace Business.Concrete
             }
             return new SuccessResult();
         }
+
+       
     }
 }

@@ -9,7 +9,7 @@ using System.Text;
 
 namespace DataAccess.Concrete.InMemory
 {
-    public class InMemoryCarDal : ICarDal
+    public class InMemoryCarDal 
     {
         List<Car> _cars;
 
@@ -68,6 +68,18 @@ namespace DataAccess.Concrete.InMemory
         }
 
         public List<CarDetailDto> GetCarDetailDto()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<CarDetailDto> GetCarDetailDto(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        
+
+        public List<CarDetailDto> GetCarsByColorIdDto(int colorId)
         {
             throw new NotImplementedException();
         }
