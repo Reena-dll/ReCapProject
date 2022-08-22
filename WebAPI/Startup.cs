@@ -78,6 +78,8 @@ namespace WebAPI
 
             app.UseHttpsRedirection();
 
+            app.UseStaticFiles();
+
             app.UseRouting();
 
             app.UseAuthorization(); // O ev içerisinde ne yapýlabilir /2
